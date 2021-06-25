@@ -60,9 +60,10 @@ Thanks to PyTorch and its 3rd-party libraries, this codebase also contains follo
     conda create -n vl-bert python=3.6 pip
     conda activate vl-bert
     ```
-* PyTorch 1.0.0 or 1.1.0
+* Also work with PyTorch 1.8.0 and cuda 11.1
     ```bash
-    conda install pytorch=1.1.0 cudatoolkit=9.0 -c pytorch
+    # conda install pytorch=1.1.0 cudatoolkit=9.0 -c pytorch
+    conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
     ```
 * Apex (optional, for speed-up and fp16 training)
     ```bash

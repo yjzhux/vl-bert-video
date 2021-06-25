@@ -6,11 +6,11 @@ numpy
 opencv-python
 pandas
 Pillow
-protobuf==3.10.0
+protobuf
 pycocotools
 PyYAML
-regex==2019.8.19
-requests==2.22.0
+regex
+requests
 scikit-image
 scipy
 tensorboard
