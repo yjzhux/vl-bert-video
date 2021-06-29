@@ -1,6 +1,6 @@
 data/vcr
 data/en_corpus
-model/
+model/pretrained_model
 run/
 commom/
 output/
