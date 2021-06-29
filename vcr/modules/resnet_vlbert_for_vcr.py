@@ -142,7 +142,7 @@ class ResNetVLBERT(Module):
         q_end = 1 + question_mask.sum(2, keepdim=True)
         a_end = q_end + 1 + answers_mask.sum(2, keepdim=True)
         input_ids = torch.zeros((batch_size, num_choices, max_len), dtype=question.dtype, device=question.device)
-        input_mask = torch.ones((batch_size, num_choices, max_len), dtype=torch.uint8, device=question.device)
+        input_mask = torch.ones((batch_size, num_choices, max_len), dtype=torch.bool, device=question.device)
         input_type_ids = torch.zeros((batch_size, num_choices, max_len), dtype=question.dtype, device=question.device)
         text_tags = input_type_ids.new_zeros((batch_size, num_choices, max_len))
         grid_i, grid_j, grid_k = torch.meshgrid(torch.arange(batch_size, device=question.device),
@@ -173,7 +173,7 @@ class ResNetVLBERT(Module):
         q_end = 1 + question_mask.sum(2, keepdim=True)
         a_end = q_end + answers_mask.sum(2, keepdim=True)
         input_ids = torch.zeros((batch_size, num_choices, max_len), dtype=question.dtype, device=question.device)
-        input_mask = torch.ones((batch_size, num_choices, max_len), dtype=torch.uint8, device=question.device)
+        input_mask = torch.ones((batch_size, num_choices, max_len), dtype=torch.bool, device=question.device)
         input_type_ids = torch.zeros((batch_size, num_choices, max_len), dtype=question.dtype, device=question.device)
         text_tags = input_type_ids.new_zeros((batch_size, num_choices, max_len))
         grid_i, grid_j, grid_k = torch.meshgrid(torch.arange(batch_size, device=question.device),
@@ -202,7 +202,7 @@ class ResNetVLBERT(Module):
         a_end = 1 + answers_mask.sum(2, keepdim=True)
         q_end = a_end + 1 + question_mask.sum(2, keepdim=True)
         input_ids = torch.zeros((batch_size, num_choices, max_len), dtype=question.dtype, device=question.device)
-        input_mask = torch.ones((batch_size, num_choices, max_len), dtype=torch.uint8, device=question.device)
+        input_mask = torch.ones((batch_size, num_choices, max_len), dtype=torch.bool, device=question.device)
         input_type_ids = torch.zeros((batch_size, num_choices, max_len), dtype=question.dtype, device=question.device)
         text_tags = input_type_ids.new_zeros((batch_size, num_choices, max_len))
         grid_i, grid_j, grid_k = torch.meshgrid(torch.arange(batch_size, device=question.device),
